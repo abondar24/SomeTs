@@ -12,3 +12,4 @@ Basic stuff related to typescript
 - arrays
 - unions
 - tuples
+- enums
