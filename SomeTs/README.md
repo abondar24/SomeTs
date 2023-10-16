@@ -1,4 +1,4 @@
-#SomeTS
+# SomeTS
 
 Basic stuff related to typescript
 
@@ -10,3 +10,4 @@ Basic stuff related to typescript
 - functions 
 - objects
 - arrays
+- unions
