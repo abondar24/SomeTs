@@ -4,10 +4,11 @@ Basic stuff related to typescript
 
 
 
-## Examples
+## Basics
 
 - vars 
 - functions 
 - objects
 - arrays
 - unions
+- tuples
