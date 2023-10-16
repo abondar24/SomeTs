@@ -16,4 +16,4 @@ Basic stuff related to typescript
 
 ## Test Project
 Pure TS project setup
-Run: `npm start`
+Run: `npm install npm start`
