@@ -13,3 +13,4 @@ Basic stuff related to typescript
 - unions
 - tuples
 - enums
+- interface
