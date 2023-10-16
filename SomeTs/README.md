@@ -3,7 +3,6 @@
 Basic stuff related to typescript
 
 
-
 ## Basics
 
 - vars 
@@ -14,3 +13,7 @@ Basic stuff related to typescript
 - tuples
 - enums
 - interface
+
+## Test Project
+Pure TS project setup
+Run: `npm start`
