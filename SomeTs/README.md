@@ -15,6 +15,7 @@ Basic stuff related to typescript
 - interface
 - classes
 - generics
+- type detection
 
 ## Test Project
 Pure TS project setup
