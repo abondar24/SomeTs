@@ -14,6 +14,7 @@ Basic stuff related to typescript
 - enums
 - interface
 - classes
+- generics
 
 ## Test Project
 Pure TS project setup
