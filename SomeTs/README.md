@@ -13,6 +13,7 @@ Basic stuff related to typescript
 - tuples
 - enums
 - interface
+- classes
 
 ## Test Project
 Pure TS project setup
