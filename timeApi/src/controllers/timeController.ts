@@ -6,3 +6,6 @@ export const localTime = (req: Request, resp: Response): void => {
         time: getLocalTime()
     });
 };
+
+//todo: add endpoint to convert to timezone seletec by user
+//todo: add endpoint to get date from timestamp
