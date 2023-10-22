@@ -1,4 +1,3 @@
-*.js
-
+/basics/*.js
 timeApi/node_modules
 timeApi/dist
