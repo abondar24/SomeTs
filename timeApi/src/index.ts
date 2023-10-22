@@ -7,7 +7,7 @@ const app = express();
 const PORT = 8024;
 
 app.get(Endpoint.HEALTH, health);
-app.get(Endpoint.LOCAL,localTime)
+app.get(Endpoint.TIME+Endpoint.LOCAL,localTime)
 
 app.listen(PORT, ()=>{
   console.log(`TimeApi is running on port ${PORT}`)

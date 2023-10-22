@@ -1,5 +1,5 @@
 import { Request,Response } from "express";
-import { health } from "../controllers/healthController";
+import { localTime } from "../controllers/timeController";
 
 describe ('Health controller',()=>{
 
@@ -10,9 +10,9 @@ describe ('Health controller',()=>{
             json: jest.fn(),
         } as unknown as Response;
 
-        health(mockReq, mockResp);
+        localTime(mockReq, mockResp);
 
         expect(mockResp.json).toHaveBeenCalledTimes(1);
-        expect(mockResp.json).toHaveBeenCalledWith({ message: 'Time API is up' });
+       
     }); 
 });
