@@ -1,18 +1,53 @@
-import { Request,Response } from "express";
-import { localTime } from "../controllers/timeController";
+import supertest from 'supertest';
+import server from '../index';
 
-describe ('Health controller',()=>{
 
-    it ('should return health message', ()=>{
-        const mockReq = {} as Request;
+describe ('Time controller',()=>{
 
-        const mockResp = {
-            json: jest.fn(),
-        } as unknown as Response;
-
-        localTime(mockReq, mockResp);
-
-        expect(mockResp.json).toHaveBeenCalledTimes(1);
+    it ('should return local time', async ()=>{
        
+        const response = await supertest(server).get("/time/local");
+        expect(response.status).toBe(200)
+
+        const responseBody = response.body;
+        expect(responseBody).toHaveProperty('time');
+        expect(responseBody.time).toBeDefined();
+
     }); 
+
+     it ('should return time in zone', async ()=>{
+        const response = await supertest(server).get("/time/zone/AST");
+        expect(response.status).toBe(200)
+
+        const responseBody = response.body;
+        expect(responseBody).toHaveProperty('time');
+        expect(responseBody.time).toBeDefined();
+      
+    }); 
+
+    it ('should return 400 with unknown zone', async ()=>{
+        const response = await supertest(server).get("/time/zone/TTT");
+        expect(response.status).toBe(400)
+
+        const responseBody = response.body;
+        expect(responseBody).toHaveProperty('message');
+        expect(responseBody.message).toBe('Unknown timezone');
+      
+    }); 
+
+    it ('should return 400 with number zone', async ()=>{
+        const response = await supertest(server).get("/time/zone/123");
+        expect(response.status).toBe(400)
+
+        const responseBody = response.body;
+        expect(responseBody).toHaveProperty('message');
+        expect(responseBody.message).toBe('Unknown timezone');
+      
+    }); 
+
 });
+
+afterAll(() => {
+    server.close();
+  });
+

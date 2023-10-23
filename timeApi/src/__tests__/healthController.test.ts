@@ -1,18 +1,21 @@
-import { Request,Response } from "express";
-import { health } from "../controllers/healthController";
+import supertest from 'supertest';
+import server from '../index';
 
-describe ('Health controller',()=>{
+describe ('Health controller', ()=>{
 
-    it ('should return health message', ()=>{
-        const mockReq = {} as Request;
+    it ('should return health message', async ()=>{
+        
+        const response = await supertest(server).get("/health");
+        expect(response.status).toBe(200)
 
-        const mockResp = {
-            json: jest.fn(),
-        } as unknown as Response;
+        const responseBody = response.body;
+        expect(responseBody).toHaveProperty('message');
+        expect(responseBody.message).toBe('Time API is up');
 
-        health(mockReq, mockResp);
-
-        expect(mockResp.json).toHaveBeenCalledTimes(1);
-        expect(mockResp.json).toHaveBeenCalledWith({ message: 'Time API is up' });
     }); 
+
 });
+
+afterAll(() => {
+    server.close();
+  });

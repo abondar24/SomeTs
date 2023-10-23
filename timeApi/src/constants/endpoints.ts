@@ -1,5 +1,6 @@
 export enum Endpoint {
     HEALTH = "/health",
     TIME = "/time",
-    LOCAL = "/local",
+    LOCAL = TIME + "/local",
+    ZONE = TIME + "/zone/:zone",
 }
