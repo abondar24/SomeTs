@@ -17,6 +17,6 @@ Basic stuff related to typescript
 - generics
 - type detection
 
-## Test Project
-Pure TS project setup
-Run: `npm install npm start`
+## Time API
+
+See full doc [here](timeApi/README.md)
