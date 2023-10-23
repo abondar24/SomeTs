@@ -45,6 +45,15 @@ describe ('Time controller',()=>{
       
     }); 
 
+    it ('should return time by timestamp', async ()=>{
+        const response = await supertest(server).get("/time/timestamp/1235678");
+        expect(response.status).toBe(200)
+
+        const responseBody = response.body;
+        expect(responseBody).toHaveProperty('time');
+        expect(responseBody.time).toBeDefined();
+      
+    }); 
 });
 
 afterAll(() => {
