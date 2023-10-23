@@ -3,4 +3,5 @@ export enum Endpoint {
     TIME = "/time",
     LOCAL = TIME + "/local",
     ZONE = TIME + "/zone/:zone",
+    STAMP = TIME + "/timestamp/:stamp"
 }

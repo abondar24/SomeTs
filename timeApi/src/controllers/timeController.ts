@@ -1,5 +1,5 @@
 import { Request,Response } from "express";
-import { getLocalTime,getTimeInZone } from '../services/timeService' 
+import { getLocalTime,getTimeInZone,getTimeByStamp } from '../services/timeService' 
 
 export const localTime = (req: Request, resp: Response): void => {
     resp
@@ -27,4 +27,12 @@ export const timeByZone = (req: Request, resp: Response): void => {
     
 };
 
-//todo: add endpoint to get date from timestamp
+
+export const timeByStamp = (req: Request, resp: Response): void => {
+       let timestamp = parseInt(req.params.timestamp,10);
+       resp
+       .status(200)
+       .json({
+        time: getTimeByStamp(timestamp)
+  })
+};
