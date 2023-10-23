@@ -2,6 +2,7 @@ import swaggerJSDoc from 'swagger-jsdoc';
 
 const options = {
   definition: {
+    servers: [{ url: 'http://localhost:8024/api-docs' }],
     openapi: '3.0.0',
     info: {
       title: 'Time API',
